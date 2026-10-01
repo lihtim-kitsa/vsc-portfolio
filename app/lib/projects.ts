@@ -11,7 +11,7 @@ export type Project = {
   approach: string;
   details: string[];
   stack: string[];
-  variant: "drift" | "stoneforge" | "retail" | "qkd" | "oracle" | "pinn" | "jarvis" | "fraud" | "kepler" | "quantum" | "beijan" | "mobile" | "deltarune";
+  variant: "drift" | "stoneforge" | "retail" | "qkd" | "oracle" | "pinn" | "jarvis" | "fraud" | "kepler" | "quantum" | "beijan" | "mobile" | "deltarune" | "lhc";
   sourceUrl?: string;
   liveUrl?: string;
   note?: string;
@@ -29,27 +29,18 @@ export const projects: Project[] = [
     sourceUrl: "https://github.com/lihtim-kitsa/apex-pinn"
   },
   {
-    slug: "jarvis", number: "02", title: "J.A.R.V.I.S. v3.0",
-    subtitle: "A local-aware AI assistant for building and getting things done.", category: "AI / DESKTOP ASSISTANT", year: "2026", status: "MID-DUNGEON",
-    summary: "An agentic assistant built around a cloud-local architecture, Gemini, and persistent state.",
-    brief: "A useful assistant needs to understand the current task and work across the local machine and cloud services. J.A.R.V.I.S. explores how to make that interaction feel coherent in a desktop environment.",
-    approach: "I am building an Electron application that combines a Node.js orchestration layer, Python utilities, Gemini API access, and SQLite-backed state.",
-    details: ["Electron desktop application", "Gemini-powered assistant", "Cloud-local architecture with persistent state"],
-    stack: ["Electron", "Node.js", "Python", "Gemini API", "SQLite"], variant: "jarvis",
-    sourceUrl: "https://github.com/lihtim-kitsa/jarvis-maybe"
+    slug: "qkd-anomaly-detection", number: "02", title: "QKD Anomaly Detection",
+    subtitle: "Stress-testing a detector before the lab.", category: "MACHINE LEARNING / RESEARCH", year: "2026", status: "SIMULATION STUDY",
+    summary: "Machine-learning detection for optical injection-locking attacks in twin-field QKD simulations.",
+    brief: "Optical injection locking can threaten twin-field quantum key distribution. I wanted to understand how detection approaches behave when attacks are held out from training and operating conditions shift.",
+    approach: "I built a stochastic laser and decoy-state twin-field QKD simulator, generated 22 million simulated pulses, and compared semi-supervised and supervised detectors across ten held-out synthetic attack mechanisms.",
+    details: ["22 million simulated pulses", "10 held-out synthetic attack mechanisms", "Pooled zero-day AUROC at 100 km: 0.925 (Deep SVDD-type), 0.935 (XGBoost)"],
+    stack: ["Python", "PyTorch", "XGBoost", "Simulation"], variant: "qkd",
+    note: "Simulation study only; no hardware validation.",
+    sourceUrl: "https://github.com/lihtim-kitsa/ml-attack-detection-tfqkd-oil"
   },
   {
-    slug: "fraudguard", number: "03", title: "FraudGuard",
-    subtitle: "Explainable fraud signals, ready for real-time review.", category: "MACHINE LEARNING / FINTECH", year: "—", status: "COMPLETED",
-    summary: "A real-time transaction risk system with cost-aware decisions and a live monitoring dashboard.",
-    brief: "Transaction fraud detection has to balance missed fraud against false alarms. Teams also need to understand why a transaction was flagged and review the system as it runs.",
-    approach: "I built a transaction scoring workflow with trained XGBoost and LightGBM models, SHAP explainability, cost-aware decisioning, and a React dashboard backed by FastAPI.",
-    details: ["Real-time transaction risk scoring", "XGBoost and LightGBM models with SHAP explanations", "React monitoring dashboard and FastAPI service"],
-    stack: ["Python", "FastAPI", "React", "XGBoost", "LightGBM", "SHAP"], variant: "fraud",
-    sourceUrl: "https://github.com/lihtim-kitsa/FraudGuard"
-  },
-  {
-    slug: "keplers-oracle", number: "04", title: "Kepler's Oracle",
+    slug: "keplers-oracle", number: "03", title: "Kepler's Oracle",
     subtitle: "Searching NASA's Kepler data for possible new worlds.", category: "DATA SCIENCE / ASTRONOMY", year: "—", status: "COMPLETED",
     summary: "An interactive exoplanet candidate classifier built on NASA Kepler Objects of Interest data.",
     brief: "Kepler observations contain a large set of potential exoplanet signals. This project turns those records into an interactive way to explore which candidates are worth a closer look.",
@@ -59,7 +50,7 @@ export const projects: Project[] = [
     sourceUrl: "https://github.com/lihtim-kitsa/keplers-oracle"
   },
   {
-    slug: "temporal-oracle", number: "05", title: "Temporal Oracle",
+    slug: "temporal-oracle", number: "04", title: "Temporal Oracle",
     subtitle: "A little game of forecasts and hindsight.", category: "WEB APP / FORECASTING", year: "2026", status: "MID-DUNGEON",
     summary: "A web app for forecasting historical events, then learning from how those calls resolve.",
     brief: "Forecasting is difficult when the outcomes already feel obvious. Temporal Oracle gives people a genuine historical fog of war: make a call before seeing what happened, then review calibration over time.",
@@ -70,7 +61,7 @@ export const projects: Project[] = [
     liveUrl: "https://temporal-oracle.vercel.app/"
   },
   {
-    slug: "quantum-feynatics", number: "06", title: "Quantum Feynatics",
+    slug: "quantum-feynatics", number: "05", title: "Quantum Feynatics",
     subtitle: "An inviting front door to quantum computing.", category: "WEB / COMMUNITY", year: "—", status: "COMPLETED",
     summary: "An information website for the IEEE Student Branch quantum computing team at BITS Pilani, Hyderabad.",
     brief: "A student quantum computing group needs one clear place to introduce its mission, make its activities understandable, and help interested students find a way in.",
@@ -80,7 +71,7 @@ export const projects: Project[] = [
     liveUrl: "https://quantum-feynatics.vercel.app/"
   },
   {
-    slug: "beijan-tech", number: "07", title: "Beijan Tech",
+    slug: "beijan-tech", number: "06", title: "Beijan Tech",
     subtitle: "A clear introduction to an ambitious startup.", category: "WEB / STARTUP", year: "—", status: "COMPLETED",
     summary: "An information website for Beijan Tech, an India-based startup.",
     brief: "A young company needs a focused online home that introduces its work and gives prospective customers a clear starting point.",
@@ -90,7 +81,7 @@ export const projects: Project[] = [
     liveUrl: "https://beijan.com/"
   },
   {
-    slug: "mobile-store-inventory", number: "08", title: "Mobile Store Inventory Portal",
+    slug: "mobile-store-inventory", number: "07", title: "Mobile Store Inventory Portal",
     subtitle: "Inventory and purchase orders that stay in sync.", category: "FULL STACK / OPERATIONS", year: "—", status: "COMPLETED",
     summary: "A branch inventory and ordering portal that streamlines daily coordination with headquarters.",
     brief: "Phone inventory moves between headquarters and branch stores. Staff need an accurate view of stock, a straightforward ordering process, and purchase orders they can send without rebuilding them by hand.",
@@ -99,7 +90,55 @@ export const projects: Project[] = [
     stack: ["Next.js", "React", "Supabase", "ExcelJS", "Nodemailer"], variant: "mobile"
   },
   {
-    slug: "drift-log-analyzer", number: "09", title: "Drift Log Analyzer",
+    slug: "retail-ops-platform", number: "08", title: "Retail Ops Platform",
+    subtitle: "Inventory and ordering, without the busywork.", category: "FULL STACK / COMMERCE", year: "2026", status: "CLIENT PROJECT",
+    summary: "A retail inventory and ordering application built from the interface to the data layer.",
+    brief: "Retail work moves quickly. Inventory and ordering need to be easy to scan and reliable enough to support daily decisions.",
+    approach: "I built a full-stack inventory and ordering application with a responsive Next.js interface and a PostgreSQL data layer, using TypeScript across the product.",
+    details: ["Inventory management", "Ordering workflows", "Full-stack implementation for multiple clients"],
+    stack: ["Next.js", "TypeScript", "PostgreSQL"], variant: "retail"
+  },
+  {
+    slug: "stoneforge-research", number: "09", title: "StoneForge Research",
+    subtitle: "A scan becomes a map.", category: "RESEARCH WEBSITE / PRODUCT STORY", year: "2026", status: "WEBSITE REDESIGN",
+    summary: "A clear public story for portable electromagnetic imaging and infrastructure inspection.",
+    brief: "StoneForge builds portable electromagnetic imaging systems for non-destructive infrastructure inspection. The technology is powerful, but its value is clearest when visitors can picture the journey from sensing a structure to understanding what is inside it.",
+    approach: "I organized the site around a scan-to-3D-map story. Visitors encounter the sensing workflow first, then its proof points, limitations, and deployment use cases, with each section answering the next natural question.",
+    details: ["Scan-to-map information architecture", "Sensing workflow and use cases", "Clear treatment of proof points and limitations"],
+    stack: ["Information architecture", "Visual design", "Responsive web"], variant: "stoneforge"
+  },
+  {
+    slug: "deltarune-portfolio", number: "10", title: "DELTARUNE Portfolio",
+    subtitle: "A game-inspired world for a developer portfolio.", category: "INTERACTIVE WEB / CREATIVE CODING", year: "2026", status: "DESIGN EXPERIMENT",
+    summary: "A characterful portfolio concept shaped by DELTARUNE's pixel-art atmosphere, playful storytelling, and expressive motion.",
+    brief: "Traditional portfolios can feel like static lists. This concept explores how a game-inspired visual language can make browsing personal work feel more memorable while keeping the path to projects and contact clear.",
+    approach: "I translated the mood of DELTARUNE into an original portfolio direction through dark, high-contrast surfaces, pixel-inspired details, playful transitions, and straightforward navigation between work, background, and contact.",
+    details: ["Game-inspired visual direction and interface", "Motion-led interactions with clear navigation", "Project storytelling designed for responsive screens"],
+    stack: ["Next.js", "TypeScript", "React", "CSS animations"], variant: "deltarune",
+    liveUrl: "https://mithil-astik.vercel.app/"
+  },
+  {
+    slug: "jarvis", number: "11", title: "J.A.R.V.I.S. v3.0",
+    subtitle: "A local-aware AI assistant for building and getting things done.", category: "AI / DESKTOP ASSISTANT", year: "2026", status: "MID-DUNGEON",
+    summary: "An agentic assistant built around a cloud-local architecture, Gemini, and persistent state.",
+    brief: "A useful assistant needs to understand the current task and work across the local machine and cloud services. J.A.R.V.I.S. explores how to make that interaction feel coherent in a desktop environment.",
+    approach: "I am building an Electron application that combines a Node.js orchestration layer, Python utilities, Gemini API access, and SQLite-backed state.",
+    details: ["Electron desktop application", "Gemini-powered assistant", "Cloud-local architecture with persistent state"],
+    stack: ["Electron", "Node.js", "Python", "Gemini API", "SQLite"], variant: "jarvis",
+    sourceUrl: "https://github.com/lihtim-kitsa/jarvis-maybe"
+  },
+  {
+    slug: "fraudguard", number: "12", title: "FraudGuard",
+    subtitle: "Explainable fraud signals, ready for real-time review.", category: "MACHINE LEARNING / FINTECH", year: "—", status: "COMPLETED",
+    summary: "A real-time transaction risk system with cost-aware decisions and a live monitoring dashboard.",
+    brief: "Transaction fraud detection has to balance missed fraud against false alarms. Teams also need to understand why a transaction was flagged and review the system as it runs.",
+    approach: "I built a transaction scoring workflow with trained XGBoost and LightGBM models, SHAP explainability, cost-aware decisioning, and a React dashboard backed by FastAPI.",
+    details: ["Real-time transaction risk scoring", "XGBoost and LightGBM models with SHAP explanations", "React monitoring dashboard and FastAPI service"],
+    stack: ["Python", "FastAPI", "React", "XGBoost", "LightGBM", "SHAP"], variant: "fraud",
+    sourceUrl: "https://github.com/lihtim-kitsa/FraudGuard"
+  },
+  {
+    slug: "drift-log-analyzer", number: "13", title: "Drift Log Analyzer",
     subtitle: "See position drift in context with the flight footage.", category: "TELEMETRY / DATA VISUALIZATION", year: "2026", status: "COMPLETED",
     summary: "A web-based VIO versus GPS divergence analysis tool synchronized with flight video.",
     brief: "Reviewing flight telemetry means connecting position estimates, GPS measurements, and footage. The analysis becomes much more useful when those signals can be explored together.",
@@ -109,41 +148,14 @@ export const projects: Project[] = [
     liveUrl: "https://log-analyzer-beijan.vercel.app/"
   },
   {
-    slug: "stoneforge-research", number: "10", title: "StoneForge Research",
-    subtitle: "A scan becomes a map.", category: "RESEARCH WEBSITE / PRODUCT STORY", year: "2026", status: "WEBSITE REDESIGN",
-    summary: "A clear public story for portable electromagnetic imaging and infrastructure inspection.",
-    brief: "StoneForge builds portable electromagnetic imaging systems for non-destructive infrastructure inspection. The technology is powerful, but its value is clearest when visitors can picture the journey from sensing a structure to understanding what is inside it.",
-    approach: "I organized the site around a scan-to-3D-map story. Visitors encounter the sensing workflow first, then its proof points, limitations, and deployment use cases, with each section answering the next natural question.",
-    details: ["Scan-to-map information architecture", "Sensing workflow and use cases", "Clear treatment of proof points and limitations"],
-    stack: ["Information architecture", "Visual design", "Responsive web"], variant: "stoneforge"
-  },
-  {
-    slug: "retail-ops-platform", number: "11", title: "Retail Ops Platform",
-    subtitle: "Inventory and ordering, without the busywork.", category: "FULL STACK / COMMERCE", year: "2026", status: "CLIENT PROJECT",
-    summary: "A retail inventory and ordering application built from the interface to the data layer.",
-    brief: "Retail work moves quickly. Inventory and ordering need to be easy to scan and reliable enough to support daily decisions.",
-    approach: "I built a full-stack inventory and ordering application with a responsive Next.js interface and a PostgreSQL data layer, using TypeScript across the product.",
-    details: ["Inventory management", "Ordering workflows", "Full-stack implementation for multiple clients"],
-    stack: ["Next.js", "TypeScript", "PostgreSQL"], variant: "retail"
-  },
-  {
-    slug: "qkd-anomaly-detection", number: "12", title: "QKD Anomaly Detection",
-    subtitle: "Stress-testing a detector before the lab.", category: "MACHINE LEARNING / RESEARCH", year: "2026", status: "SIMULATION STUDY",
-    summary: "Machine-learning detection for optical injection-locking attacks in twin-field QKD simulations.",
-    brief: "Optical injection locking can threaten twin-field quantum key distribution. I wanted to understand how detection approaches behave when attacks are held out from training and operating conditions shift.",
-    approach: "I built a stochastic laser and decoy-state twin-field QKD simulator, generated 22 million simulated pulses, and compared semi-supervised and supervised detectors across ten held-out synthetic attack mechanisms.",
-    details: ["22 million simulated pulses", "10 held-out synthetic attack mechanisms", "Pooled zero-day AUROC at 100 km: 0.925 (Deep SVDD-type), 0.935 (XGBoost)"],
-    stack: ["Python", "PyTorch", "XGBoost", "Simulation"], variant: "qkd",
-    note: "Simulation study only; no hardware validation."
-  },
-  {
-    slug: "deltarune-portfolio", number: "13", title: "DELTARUNE Portfolio",
-    subtitle: "A game-inspired world for a developer portfolio.", category: "INTERACTIVE WEB / CREATIVE CODING", year: "2026", status: "DESIGN EXPERIMENT",
-    summary: "A characterful portfolio concept shaped by DELTARUNE's pixel-art atmosphere, playful storytelling, and expressive motion.",
-    brief: "Traditional portfolios can feel like static lists. This concept explores how a game-inspired visual language can make browsing personal work feel more memorable while keeping the path to projects and contact clear.",
-    approach: "I translated the mood of DELTARUNE into an original portfolio direction through dark, high-contrast surfaces, pixel-inspired details, playful transitions, and straightforward navigation between work, background, and contact.",
-    details: ["Game-inspired visual direction and interface", "Motion-led interactions with clear navigation", "Project storytelling designed for responsive screens"],
-    stack: ["Next.js", "TypeScript", "React", "CSS animations"], variant: "deltarune"
+    slug: "lhc-anomaly-detection", number: "14", title: "LHC Anomaly Detection",
+    subtitle: "Model-agnostic searches for new physics.", category: "MACHINE LEARNING / PHYSICS", year: "2024", status: "COMPLETED",
+    summary: "Benchmarking unsupervised and semi-supervised anomaly detectors on the LHC Olympics 2020 dataset.",
+    brief: "Model-agnostic searches seek rare events that differ from the dominant background without committing to a specific signal model. I wanted to quantify the trade-offs between label efficiency, robustness, and mass sculpting.",
+    approach: "I benchmarked several architectures—including Isolation Forest, Deep SVDD, and Deep SAD—on the LHCO 2020 R&D dijet dataset, evaluating discrimination against explicitly mass-decorrelated baselines and analyzing failure modes.",
+    details: ["LHC Olympics 2020 R&D dataset with 1.1M events", "Evaluated Autoencoders, Isolation Forest, Deep SVDD, and Deep SAD", "Analyzed mass sculpting via Jensen-Shannon divergence"],
+    stack: ["Python", "PyTorch", "Scikit-Learn", "FastJet"], variant: "lhc",
+    sourceUrl: "https://github.com/lihtim-kitsa/lhc-olympics-2020"
   }
 ];
 

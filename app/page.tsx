@@ -44,7 +44,7 @@ function HomeView({ open }: { open: (id: FileId) => void }) {
     <h1 className="home-title"><span>Mithil</span><em>Astik</em></h1>
     <div className="role-pills"><span><i className="pip pip-green" /> Developer</span><span><i className="pip pip-pink" /> Product Designer</span><span><i className="pip pip-blue" /> Physics &amp; EEE</span><span className="role-affiliation">@ BITS Pilani</span></div>
     <p className="home-tagline">Building thoughtful software &nbsp;↗</p>
-    <p className="home-intro">I live at the crossroads of <b>software engineering</b>, <b>product design</b>, and <b>physics</b>. I build systems that make complex ideas easier to see, understand, and use.</p>
+    <p className="home-intro">I’m a <b>designer</b> and <b>web developer</b> with a background in <b>physics</b>. I design interfaces, build digital products, and develop technical systems that turn complex ideas into clear, intuitive experiences.</p>
     <div className="home-actions"><button className="editor-primary" onClick={() => open("projects")}>📁 Projects</button><button onClick={() => open("about")}>👤 About me</button><button onClick={() => open("contact")}>✉ Contact</button></div>
     <div className="stat-strip"><div><b>{String(projects.length).padStart(2, "0")}</b><span>SELECTED PROJECTS</span></div><div><b>03</b><span>FIELDS OF PRACTICE</span></div><div><b>∞</b><span>CURIOSITY</span></div><div><b>↗</b><span>ALWAYS LEARNING</span></div></div>
     <div className="home-bottom"><span>SCROLL OR PICK A FILE TO EXPLORE</span><span>HYDERABAD, INDIA&nbsp; <i>●</i></span></div>
